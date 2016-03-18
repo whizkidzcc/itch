@@ -34,3 +34,26 @@ Sprite.prototype.registerImages = function(imageNames) {
         this.images.push(img);
     }
 };
+
+Sprite.prototype.rotateClockwise = function(degrees) {
+    this.images[0].style.transform = 'rotate(' + degrees + 'deg)';
+};
+
+Sprite.prototype.rotateCounterclockwise = function(degrees) {
+    this.rotateClockwise(-degrees);
+};
+
+Sprite.prototype.setX = function(x) {
+    this.x = x;
+    this.images[0].style.left = this.x + "px";
+};
+    
+Sprite.prototype.setY = function(y) {
+    this.y = y;
+    this.images[0].style.top = this.y + "px";
+};
+
+Sprite.prototype.setPosition = function(x, y) {
+    this.setX(x);
+    this.setY(y);
+};
