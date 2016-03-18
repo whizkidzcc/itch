@@ -6,6 +6,7 @@
 
 <link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
 <link href="vendor/jquery-layout/layout-default.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <style>
 .ui-layout-west  {
@@ -14,7 +15,7 @@
 </style>
 </head>
 
-<body>
+<body id="main">
 <div class="ui-layout-center">Center</div>
 <div class="ui-layout-north">North</div>
 <div class="ui-layout-south">South</div>
@@ -29,6 +30,7 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="vendor/jquery-layout/jquery.layout-1.4.4.js"></script>
 <script src="js/project.js"></script>
+<script src="js/sprite.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -45,6 +47,9 @@ $(document).ready(function() {
     });
 
     Project.init();
+    
+    var sprite = new Sprite(['library/sprites/cat-1.svg']);
+    sprite.changeX(100);
 });
 </script>
 
