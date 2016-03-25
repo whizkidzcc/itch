@@ -19,11 +19,15 @@ Project = {
             error: function(req, status, error) {
                 console.log('Error: ' + status);
             }
-        })
+        });
     },
 
     start: function() {
-
+    var sprite = new Sprite(['library/sprites/cat-1.svg']);
+    sprite.changeY(200);
+    sprite.changeX(200);
+    sprite.rotateClockwise(30);
+//    sprite.setX(300);
     },
 
     stop: function() {

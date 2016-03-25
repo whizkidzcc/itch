@@ -23,8 +23,6 @@ Sprite.prototype.changeY = function(units) {
     this.y += units;
     this.images[0].style.top = this.y + "px";
 };
-
-
 Sprite.prototype.registerImages = function(imageNames) {
     for (var i = 0; i<imageNames.length; i++) {
         var img = document.createElement('img');
@@ -33,4 +31,20 @@ Sprite.prototype.registerImages = function(imageNames) {
         $('#main').append(img);
         this.images.push(img);
     }
+};
+Sprite.prototype.rotateClockwise = function(degrees) {
+    this.images[0].style.transform = "rotate(" + degrees + "deg)";
+};
+    
+Sprite.prototype.rotateCClockwise = function(degrees) {
+    this.images[0].style.transform = "rotate(" + -degrees + "deg)";
+};
+
+Sprite.prototype.setX = function(position) {
+    this.x = position;
+    this.images[0].style.left = this.x + "px";
+};
+Sprite.prototype.setY = function(position) {
+    this.y = position;
+    this.images[0].style.top = this.y + "px";
 };
