@@ -24,9 +24,9 @@ Project = {
 
     start: function() {
     var sprite = new Sprite(['library/sprites/cat-1.svg']);
-    sprite.changeY(200);
-    sprite.changeX(200);
+//    sprite.set    Y(400);
     sprite.rotateClockwise(30);
+    sprite.move(100);
 //    sprite.setX(300);
     },
 

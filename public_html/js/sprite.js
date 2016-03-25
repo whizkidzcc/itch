@@ -12,11 +12,13 @@ function Sprite(images, sounds, text) {
     this.text = text;
     this.x = 0;
     this.y = 0;
+    this.direction = 0;
 }
 
 Sprite.prototype.changeX = function(units) {
     this.x += units;
     this.images[0].style.left = this.x + "px";
+    
 };
 
 Sprite.prototype.changeY = function(units) {
@@ -33,11 +35,13 @@ Sprite.prototype.registerImages = function(imageNames) {
     }
 };
 Sprite.prototype.rotateClockwise = function(degrees) {
-    this.images[0].style.transform = "rotate(" + degrees + "deg)";
+    this.direction = this.direction + degrees;
+    this.images[0].style.transform = "rotate(" + this.direction + "deg)"; 
 };
     
 Sprite.prototype.rotateCClockwise = function(degrees) {
-    this.images[0].style.transform = "rotate(" + -degrees + "deg)";
+    this.direction = this.direction - degrees;
+    this.images[0].style.transform = "rotate(" + this.direction + "deg)";
 };
 
 Sprite.prototype.setX = function(position) {
@@ -47,4 +51,14 @@ Sprite.prototype.setX = function(position) {
 Sprite.prototype.setY = function(position) {
     this.y = position;
     this.images[0].style.top = this.y + "px";
+};
+
+Sprite.prototype.setPosition = function(x, y) {
+    this.setX(x);
+    this.setY(y);
+};
+
+Sprite.prototype.move = function(steps) {
+    this.setPosition(this.x + (Math.cos( this.direction * Math.PI / 180) * steps).toFixed(2),
+                     this.y + (Math.sin( this.direction * Math.PI / 180) * steps).toFixed(2));
 };
