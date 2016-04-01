@@ -24,10 +24,10 @@ Project = {
 
     start: function() {
     var sprite = new Sprite(['library/sprites/cat-1.svg']);
-//    sprite.set    Y(400);
-    sprite.rotateClockwise(30);
-    sprite.move(100);
+    sprite.rotateClockwise(45);
+    sprite.move(300);
 //    sprite.setX(300);
+    sprite.flipY();
     },
 
     stop: function() {

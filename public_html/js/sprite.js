@@ -13,6 +13,8 @@ function Sprite(images, sounds, text) {
     this.x = 0;
     this.y = 0;
     this.direction = 0;
+    this.flipDirY = 0;
+    this.flipDirX = 0;
 }
 
 Sprite.prototype.changeX = function(units) {
@@ -61,4 +63,21 @@ Sprite.prototype.setPosition = function(x, y) {
 Sprite.prototype.move = function(steps) {
     this.setPosition(this.x + (Math.cos( this.direction * Math.PI / 180) * steps).toFixed(2),
                      this.y + (Math.sin( this.direction * Math.PI / 180) * steps).toFixed(2));
+};
+
+Sprite.prototype.glide = function(x, y, duration) {
+    this.images[0].style.animationName = "glide";
+    this.images[0].style.TimingFunction = "linear";
+    this.images[0].style.fillMode = "forwards";
+    this.images[0].style.animationDuration = duration + "s";
+};
+
+Sprite.prototype.flipY = function() {
+    this.flipDirY = 180 - this.flipDirY;
+    this.images[0].style.transform = "rotateY(" + (this.direction + this.flipDirY) + "deg)";
+};
+
+Sprite.prototype.flipX = function() {
+    this.flipDirX = 180 - this.flipDirX;
+    this.images[0].style.transform = "rotateX(" + (this.direction + this.flipDirX) + "deg)";
 };
