@@ -24,8 +24,8 @@ Project = {
 
     start: function() {
         var sprite = new Sprite(['library/sprites/cat-1.svg']);
-        sprite.rotateClockwise(45);
-        sprite.move(300);
+        //sprite.rotateClockwise(45);
+        sprite.move(200);
         //sprite.changeX(200);
         //sprite.changeY(300);
         //sprite.rotateClockwise(90);
@@ -34,10 +34,20 @@ Project = {
         //sprite.setPosition(100, 150);
         //sprite.setX(200);
         //sprite.setY(50);
+        //sprite.rotateClockwise(45);
+        //sprite.flipX();
+        sprite.flipY();
     },
 
     stop: function() {
 
+    },
+    
+    data: {
+        sprites: [],
+        stage: {
+            
+        }
     }
 };
 
