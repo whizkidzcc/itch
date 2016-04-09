@@ -1,3 +1,12 @@
 #main, #stage {
     position: absolute;
 }
+
+@keyframes sprite-glide {
+    from {
+        left: 0; top: 0;
+    }
+    to {
+        left: 200px; top: 200px;
+    }
+}

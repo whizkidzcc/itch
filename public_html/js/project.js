@@ -36,7 +36,9 @@ Project = {
         //sprite.setY(50);
         //sprite.rotateClockwise(45);
         //sprite.flipX();
-        sprite.flipY();
+        //sprite.flipY();
+        sprite.glide(100, 100, 1);
+        
     },
 
     stop: function() {
