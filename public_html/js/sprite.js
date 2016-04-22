@@ -4,10 +4,10 @@
 
 "use strict";
 
-function Sprite(images, sounds, text) {
+function Sprite(appendId, images, sounds, text) {
     this.scripts = {};
     this.images = [];
-    this.registerImages(images);
+    this.registerImages(images, appendId);
     this.sounds = sounds;
     this.text = text;
     this.x = 0;
@@ -17,13 +17,13 @@ function Sprite(images, sounds, text) {
     this.flipDirY = 0;
 }
 
-Sprite.prototype.registerImages = function(imageNames) {
+Sprite.prototype.registerImages = function(imageNames, appendId) {
     for (var i = 0; i < imageNames.length; i++) {
         // <img src="someImage">
         var img = document.createElement('img');
         img.src = imageNames[i];
         img.style.position = 'absolute';
-        $('#main').append(img);
+        $('#' + appendId).append(img);
         this.images.push(img);
     }
 };
