@@ -16,15 +16,58 @@
 </head>
 
 <body id="main">
-<div class="ui-layout-center">Center</div>
+<div class="ui-layout-center">   
+    <div id="work-area">
+        <ul>
+            <li><a href="#scripts">Scripts</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#sounds">Sounds</a></li>
+            <li><a href="#text">Text</a></li>
+        </ul>
+        <div id="scripts">
+            <p>This is the scripts section.</p>
+        </div>
+        <div id="images">
+            <p>This is the images section.</p>
+        </div>
+        <div id="sounds">
+            <p>This is the sounds section.</p>
+        </div>
+        <div id="text">
+            <p>This is the text section.</p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div id="work-area2">
+        <h3>Scripts</h3>
+        <div>
+            <p>
+            This is the scripts section.
+            </p>
+        </div>
+        <h3>Images</h3>
+        <div>
+            This is the images section.
+        </div>
+        <h3>Sounds</h3>
+        <div>
+            This is the sounds section.
+        </div>
+        <h3>Text</h3>
+        <div>
+            This is the text section.
+        </div>
+    </div>
+</div>
+
 <div class="ui-layout-north">North</div>
 <div class="ui-layout-south">South</div>
-<div class="ui-layout-east">East</div>
 <div class="ui-layout-west">
     <div class="layout-stage">Stage</div>
     <div class="layout-sprite">Sprite</div>
 </div>
-
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -38,7 +81,6 @@ $(document).ready(function() {
         applyDefaultStyles: true,
         west__applyDefaultStyles: false,
         west__minSize: 500,
-        east__size: window.innerWidth - 720,
         west__childOptions: {
             north__paneSelector: '.layout-stage',
             center__paneSelector: '.layout-sprite',
@@ -46,6 +88,9 @@ $(document).ready(function() {
         }
     });
 
+    $('#work-area').tabs();
+    $('#work-area2').accordion();
+    
     Project.init();
     Project.start();
 });
