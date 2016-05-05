@@ -23,11 +23,11 @@ Project = {
     },
 
     start: function() {
-        var sprite = new Sprite(['library/sprites/cat-1.svg']);
+        var sprite = new Sprite(['library/sprites/cat-1.svg'], null, null, 'stage');
         sprite.rotateClockwise(45);
         sprite.move(300);
     //    sprite.setX(300);
-        sprite.flipY();
+        //sprite.flipY();
         
         var text1 = new Text('Welcome to Itch!!!', 'stage');
         var text2 = new Text('The next-gen Scratch', 'stage');
