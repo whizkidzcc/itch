@@ -23,10 +23,10 @@ Project = {
     },
 
     start: function() {
-        var sprite = new Sprite(['library/sprites/cat-1.svg'], null, null, 'stage');
-        sprite.rotateClockwise(45);
-        sprite.move(300);
-    //    sprite.setX(300);
+        var sprite = new Sprite('Cat', ['library/sprites/cat-1.svg'], null, null, 'stage');
+        //sprite.rotateClockwise(45);
+        //sprite.move(300);
+        //sprite.setX(300);
         //sprite.flipY();
         
         var text1 = new Text('Welcome to Itch!!!', 'stage');

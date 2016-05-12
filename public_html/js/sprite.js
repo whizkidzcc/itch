@@ -4,10 +4,10 @@
 
 "use strict";
 
-function Sprite(images, sounds, text, cssId) {
+function Sprite(name, images, sounds, text, cssId) {
     this.scripts = {};
     this.images = [];
-    this.registerImages(images, cssId);
+    this.spriteId = name;
     this.sounds = sounds;
     this.text = text;
     this.x = 0;
@@ -15,6 +15,9 @@ function Sprite(images, sounds, text, cssId) {
     this.direction = 0;
     this.flipDirY = 0;
     this.flipDirX = 0;
+    
+    this.registerImages(images, cssId);
+
 }
 
 Sprite.prototype.changeX = function(units) {
@@ -32,8 +35,14 @@ Sprite.prototype.registerImages = function(imageNames, cssId) {
     for (var i = 0; i<imageNames.length; i++) {
         var img = document.createElement('img');
         img.src = imageNames[i];
+        img.id = this.spriteId + '-' + i;
         img.style.position = 'absolute';
-        $('#' + cssId).append(img);
+
+        var divEle = document.createElement('div');
+        $(divEle).append(img);
+        $(divEle).draggable();
+        
+        $('#' + cssId).append(divEle);
         this.images.push(img);
     }
 };
